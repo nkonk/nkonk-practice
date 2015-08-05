@@ -1,3 +1,53 @@
+
+int main()
+{
+	int inputs;
+	int preR=0,Rcount=0,postR=0,i,j,k,l,o,maxlen=0,len,cur=0;
+	char a[10000000];
+	scanf("%d",&inputs);
+	if(inputs <= 10)
+	{
+		for(o=0;o<inputs;o++)
+			{	
+			scanf("%s",a);
+			len = strlen(a);
+			for(i=0;i<len;i++)
+				{
+					if(i!=0)
+					{
+						if(a[i-1]=='R')
+						{
+							preR++;
+						}
+					}
+					for(j=i;j<len;j++)
+					{
+						for(k=i;k<j+1;k++)
+						{
+							if(a[k] == 'K')
+								Rcount++;
+						}
+					
+					for(k=j+1;k<len;k++)
+					{
+						if(a[k]=='R')
+							postR++;
+					}
+					cur = preR+Rcount+postR;
+					if(cur > maxlen)
+						{
+							maxlen = cur;
+						}
+					}
+				}
+				printf("%d",maxlen);
+				}
+			}
+	}
+
+
+
+
 # nkonk-practice
 practice
 #include <iostream>
